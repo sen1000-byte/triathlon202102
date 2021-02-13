@@ -32,15 +32,16 @@ class ColorViewController: UIViewController {
         makingRed = 0
         makingBlue = 0
         makingGreen = 0
-        whichColor = 1
+        whichColor = 0
         
         
-        sampleImageView.backgroundColor = UIColor(red: CGFloat(red/255), green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: 1.0)
+        sampleImageView.backgroundColor = UIColor(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: 1.0)
         makingImageView.backgroundColor = UIColor(red: makingRed/255, green: makingGreen / 255, blue: makingBlue / 255, alpha: 1.0)
 
         // Do any additional setup after loading the view.
     }
-    
+
+    /*
     @IBAction func setRed() {
         whichColor = 1
     }
@@ -56,14 +57,16 @@ class ColorViewController: UIViewController {
     @IBAction func cancel() {
         whichColor = 0
     }
-    
+    */
+ 
     //ジャッジする関数+=10は許す
     func  judge() {
         let gapRed:CGFloat! = abs(CGFloat(red) - makingRed)
         let gapGreen:CGFloat! = abs(CGFloat(green) - makingGreen)
         let gapBlue:CGFloat! = abs(CGFloat(blue) - makingBlue)
         
-        if gapRed <= 10 && gapGreen <= 10 && gapBlue <= 10 {
+        
+        if gapRed <= 20 && gapGreen <= 20 && gapBlue <= 20 {
             let alert: UIAlertController = UIAlertController(title: "クリア", message: "ボタンを押すと次の種目が始まります", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "次へ進む", style: .default, handler: {action in
                 self.performSegue(withIdentifier: "toMaze", sender: nil)
@@ -72,7 +75,23 @@ class ColorViewController: UIViewController {
         }
     }
     
-    //タッチ開始の位置を取得
+    //タッチ開始の位置を所得
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch: UITouch = touches.first!
+        let location: CGPoint = touch.location(in: self.view)
+        let maxy = self.view.bounds.maxY
+        //タッチした場所によって変更
+        if location.y <= maxy - 135 && location.y >= maxy - 185{
+            whichColor = 3
+        } else if location.y <= maxy - 205 && location.y >= maxy - 255{
+            whichColor = 2
+        }else if location.y <= maxy - 275 && location.y >= maxy - 325{
+            whichColor = 1
+        }else{
+            whichColor = 0
+        }
+    }
+    //タッチの位置を取得
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         //タッチの位置を取得
         let touch: UITouch = touches.first!
@@ -95,7 +114,7 @@ class ColorViewController: UIViewController {
                 makingGreen = 0
             }
         case 3:
-            makingBlue += makingBlue + (new.x - old.x)
+            makingBlue = makingBlue + (new.x - old.x)
             if makingBlue > 255 {
                 makingBlue = 255
             }else if makingBlue < 0 {
@@ -105,8 +124,7 @@ class ColorViewController: UIViewController {
             break
         }
         makingImageView.backgroundColor = UIColor(red: makingRed/255, green: makingGreen / 255, blue: makingBlue / 255, alpha: 1.0)
-        
-        print(red)
+        judge()
     }
 
     
