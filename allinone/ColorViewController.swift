@@ -32,7 +32,7 @@ class ColorViewController: UIViewController {
         makingRed = 0
         makingBlue = 0
         makingGreen = 0
-        whichColor = 0
+        whichColor = 1
         
         
         sampleImageView.backgroundColor = UIColor(red: CGFloat(red/255), green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: 1.0)
@@ -105,6 +105,8 @@ class ColorViewController: UIViewController {
             break
         }
         makingImageView.backgroundColor = UIColor(red: makingRed/255, green: makingGreen / 255, blue: makingBlue / 255, alpha: 1.0)
+        
+        print(red)
     }
 
     

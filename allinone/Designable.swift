@@ -54,6 +54,41 @@ class DesignableButton: UIButton {
 class DesignableLabel: UILabel {
 }
 
+@IBDesignable
+class GradationLabel: UILabel {
+    
+    //初期値の値を透明にしたい
+    @IBInspectable var Color1: UIColor = UIColor.orange
+    @IBInspectable var Color2: UIColor = UIColor.red
+
+    @IBInspectable var Point1: CGPoint = CGPoint.init(x: 0.5, y: 0)
+    @IBInspectable var Point2: CGPoint = CGPoint.init(x: 0.5, y: 1)
+    
+    @IBInspectable var number: Int = 0
+
+    // 実際の描画
+    override func draw(_ rect: CGRect) {
+        // グラデーションレイヤーを用意
+        let gradientLayer = CAGradientLayer()
+        // gradientLayerのサイズを指定
+        gradientLayer.frame = self.bounds
+
+        // グラデーションさせる色の指定
+        let color1 = Color1.cgColor
+        let color2 = Color2.cgColor
+
+        // CAGradientLayerに色を設定（ここでたくさん色を指定することも可能？）
+        gradientLayer.colors = [color1, color2]
+
+        // グラデーションの開始点、終了点を設定（0~1）
+        gradientLayer.startPoint = Point1
+        gradientLayer.endPoint = Point2
+
+        // ViewControllerの親Viewレイヤーにレイヤーを挿入する
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+}
+
 //拡張する
 extension UIView{
     @IBInspectable

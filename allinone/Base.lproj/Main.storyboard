@@ -202,93 +202,148 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W7v-p2-bxM">
-                                <rect key="frame" x="30" y="592" width="354" height="190"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OnN-ju-dgA">
+                                <rect key="frame" x="30" y="572" width="354" height="190"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpa-Ll-iNN" userLabel="red" customClass="GradationButton" customModule="allinone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="lnX-TA-t5M"/>
-                                        </constraints>
-                                        <state key="normal" title=" red">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="Color1">
-                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="Color2">
-                                                <color key="value" systemColor="systemRedColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="Point1">
-                                                <point key="value" x="0.0" y="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="Point2">
-                                                <point key="value" x="1" y="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="cancel" destination="REe-FI-5g2" eventType="touchUpInside" id="anY-42-ydP"/>
-                                            <action selector="setRed" destination="REe-FI-5g2" eventType="touchDown" id="eAV-9r-LZE"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSw-sa-AYq" userLabel="red" customClass="GradationButton" customModule="allinone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="70" width="354" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="C0Y-kI-M9G"/>
-                                        </constraints>
-                                        <state key="normal" title="green">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="Color1">
-                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="Color2">
-                                                <color key="value" systemColor="systemGreenColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="Point1">
-                                                <point key="value" x="0.0" y="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="Point2">
-                                                <point key="value" x="1" y="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="cancel" destination="REe-FI-5g2" eventType="touchUpInside" id="3mX-jD-xFc"/>
-                                            <action selector="setGreen" destination="REe-FI-5g2" eventType="touchDown" id="QvA-7f-NEY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geS-oa-6iw" userLabel="red" customClass="GradationButton" customModule="allinone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="140" width="354" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="byC-7k-ysO"/>
-                                        </constraints>
-                                        <state key="normal" title=" blue">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="Color1">
-                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="Color2">
-                                                <color key="value" systemColor="systemBlueColor"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="Point1">
-                                                <point key="value" x="0.0" y="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="point" keyPath="Point2">
-                                                <point key="value" x="1" y="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="cancel" destination="REe-FI-5g2" eventType="touchUpInside" id="Xxc-Un-smv"/>
-                                            <action selector="setBlue" destination="REe-FI-5g2" eventType="touchDown" id="wi5-NX-rux"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W7v-p2-bxM">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="190"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpa-Ll-iNN" userLabel="red" customClass="DesignableButton" customModule="allinone" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="02H-3L-XSe"/>
+                                                    <constraint firstAttribute="height" constant="50" id="lnX-TA-t5M"/>
+                                                </constraints>
+                                                <state key="normal" title=" red">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancel" destination="REe-FI-5g2" eventType="touchDragInside" id="TeT-sc-Y2l"/>
+                                                    <action selector="setRed" destination="REe-FI-5g2" eventType="touchDragInside" id="eoL-bF-qzf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSw-sa-AYq" userLabel="red" customClass="DesignableButton" customModule="allinone" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="70" width="50" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="C0Y-kI-M9G"/>
+                                                    <constraint firstAttribute="width" constant="50" id="emd-90-626"/>
+                                                </constraints>
+                                                <state key="normal" title="green">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancel" destination="REe-FI-5g2" eventType="touchUpInside" id="3mX-jD-xFc"/>
+                                                    <action selector="setGreen" destination="REe-FI-5g2" eventType="touchDown" id="QvA-7f-NEY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geS-oa-6iw" userLabel="red" customClass="DesignableButton" customModule="allinone" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="140" width="50" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="byC-7k-ysO"/>
+                                                    <constraint firstAttribute="width" constant="50" id="iDf-DZ-3I9"/>
+                                                </constraints>
+                                                <state key="normal" title=" blue">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancel" destination="REe-FI-5g2" eventType="touchUpInside" id="Xxc-Un-smv"/>
+                                                    <action selector="setBlue" destination="REe-FI-5g2" eventType="touchDown" id="wi5-NX-rux"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="w8Z-01-VqF">
+                                        <rect key="frame" x="70" y="0.0" width="284" height="190"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGo-Ue-0aC" customClass="GradationLabel" customModule="allinone" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Rjn-B0-9v7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="Color1">
+                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="point" keyPath="Point1">
+                                                        <point key="value" x="0.0" y="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="point" keyPath="Point2">
+                                                        <point key="value" x="1" y="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nih-iI-jUb" customClass="GradationLabel" customModule="allinone" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="70" width="284" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="S4f-AG-TBn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="Color1">
+                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="Color2">
+                                                        <color key="value" systemColor="systemGreenColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="point" keyPath="Point1">
+                                                        <point key="value" x="0.0" y="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="point" keyPath="Point2">
+                                                        <point key="value" x="1" y="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-ia-n8T" customClass="GradationLabel" customModule="allinone" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="140" width="284" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="rlF-P6-NqW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="Color1">
+                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="Color2">
+                                                        <color key="value" systemColor="systemBlueColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="point" keyPath="Point1">
+                                                        <point key="value" x="0.0" y="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="point" keyPath="Point2">
+                                                        <point key="value" x="1" y="0.5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="09q-uv-WVF">
@@ -330,7 +385,7 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="色の上で指をスライドさせよう" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1U-DQ-xSN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="色の上で指をスライドさせよう" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R1U-DQ-xSN">
                                 <rect key="frame" x="85.5" y="531.5" width="243" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -348,17 +403,16 @@
                         <viewLayoutGuide key="safeArea" id="dTj-eA-EQt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="W7v-p2-bxM" firstAttribute="leading" secondItem="dTj-eA-EQt" secondAttribute="leading" constant="30" id="09b-bh-DAl"/>
+                            <constraint firstItem="OnN-ju-dgA" firstAttribute="leading" secondItem="dTj-eA-EQt" secondAttribute="leading" constant="30" id="68m-Rh-vB3"/>
                             <constraint firstItem="5uj-4l-EnC" firstAttribute="leading" secondItem="dTj-eA-EQt" secondAttribute="leading" constant="30" id="9xt-bI-AWD"/>
                             <constraint firstItem="09q-uv-WVF" firstAttribute="leading" secondItem="dTj-eA-EQt" secondAttribute="leading" constant="30" id="AYt-4X-8n5"/>
-                            <constraint firstItem="W7v-p2-bxM" firstAttribute="top" secondItem="R1U-DQ-xSN" secondAttribute="bottom" constant="40" id="C0M-7g-f7N"/>
-                            <constraint firstItem="dTj-eA-EQt" firstAttribute="trailing" secondItem="W7v-p2-bxM" secondAttribute="trailing" constant="30" id="C2n-5z-sbJ"/>
                             <constraint firstItem="5uj-4l-EnC" firstAttribute="top" secondItem="dTj-eA-EQt" secondAttribute="top" constant="80" id="DtO-0l-L0x"/>
-                            <constraint firstItem="dTj-eA-EQt" firstAttribute="bottom" secondItem="W7v-p2-bxM" secondAttribute="bottom" constant="80" id="OJC-xC-ql5"/>
+                            <constraint firstItem="dTj-eA-EQt" firstAttribute="bottom" secondItem="OnN-ju-dgA" secondAttribute="bottom" constant="100" id="Jrg-gz-QaR"/>
                             <constraint firstItem="dTj-eA-EQt" firstAttribute="trailing" secondItem="5uj-4l-EnC" secondAttribute="trailing" constant="30" id="aoV-ya-RcW"/>
                             <constraint firstItem="dTj-eA-EQt" firstAttribute="trailing" secondItem="09q-uv-WVF" secondAttribute="trailing" constant="30" id="ddW-tW-Vhe"/>
                             <constraint firstItem="R1U-DQ-xSN" firstAttribute="centerX" secondItem="3zt-Gx-OM3" secondAttribute="centerX" id="r4I-NX-Rbq"/>
                             <constraint firstItem="09q-uv-WVF" firstAttribute="top" secondItem="5uj-4l-EnC" secondAttribute="bottom" constant="80" id="uNT-zS-31a"/>
+                            <constraint firstItem="dTj-eA-EQt" firstAttribute="trailing" secondItem="OnN-ju-dgA" secondAttribute="trailing" constant="30" id="ybf-WX-1Qz"/>
                         </constraints>
                     </view>
                     <connections>
@@ -476,6 +530,10 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="JGo-Ue-0aC">
+            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+        </designable>
+        <designable name="Nih-iI-jUb"/>
         <designable name="dpa-Ll-iNN">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
@@ -485,6 +543,7 @@
         <designable name="jSw-sa-AYq">
             <size key="intrinsicContentSize" width="40" height="30"/>
         </designable>
+        <designable name="yC8-ia-n8T"/>
     </designables>
     <resources>
         <systemColor name="systemBackgroundColor">
