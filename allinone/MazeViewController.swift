@@ -197,6 +197,16 @@ class MazeViewController: UIViewController {
         howToMoveBlock(sender: blockImage6)
     }
 
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        //segue識別
+//        if segue.identifier == "toResult" {
+//            //遷移先のViewControllerを取得
+//            let nextView = segue.destination as! ResultViewController
+//            //画面をフルスクリーンにする
+//            nextView.modalPresentationStyle = .fullScreen
+//        }
+//    }
+    
     /*
     // MARK: - Navigation
 

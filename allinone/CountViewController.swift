@@ -24,6 +24,9 @@ class CountViewController: UIViewController {
         count5 = 0
         pushnumber.shuffle()
         label.text = String(countMain)
+        
+        //ナビゲーションコントローラーの非表示設定
+        self.navigationController?.navigationBar.isHidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -82,10 +85,25 @@ class CountViewController: UIViewController {
             let alert: UIAlertController = UIAlertController(title: "クリア", message: "ボタンを押すと次の種目が始まります", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "次に進む", style: .default, handler: { action in
                 self.performSegue(withIdentifier: "toColor", sender: nil)
+                
+                /*Segueを使わない時　ただし、storyboard内で繋いでる時は画面遷移がダブるためエラーになる
+                let colorViewController = self.storyboard?.instantiateViewController(identifier: "Color") as! UINavigationController
+                self.navigationController?.pushViewController(colorViewController, animated: true)
+                 */
             }))
             present(alert, animated: true, completion: nil)
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        //segue識別
+//        if segue.identifier == "toColor" {
+//            //遷移先のViewControllerを取得
+//            let nextView = segue.destination as! ColorViewController
+//            //画面をフルスクリーンにする
+//            nextView.modalPresentationStyle = .fullScreen
+//        }
+//    }
     
 
     /*

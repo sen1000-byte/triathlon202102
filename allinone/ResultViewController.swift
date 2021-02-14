@@ -15,6 +15,10 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func back() {
+        //self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
     /*
     // MARK: - Navigation

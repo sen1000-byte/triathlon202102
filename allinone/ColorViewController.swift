@@ -127,6 +127,15 @@ class ColorViewController: UIViewController {
         judge()
     }
 
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        //segue識別
+//        if segue.identifier == "toMaze" {
+//            //遷移先のViewControllerを取得
+//            let nextView = segue.destination as! MazeViewController
+//            //画面をフルスクリーンにする
+//            nextView.modalPresentationStyle = .fullScreen
+//        }
+//    }
     
 
     /*
