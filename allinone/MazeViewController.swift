@@ -38,14 +38,23 @@ class MazeViewController: UIViewController {
     //最初のブロックの位置取得
     var myFirstPosition: CGPoint!
     
+    //ブロックを動かすためのタイマー
+    var blockTimer: Timer!
+    
+    //タイマー導入
+    var mainTimer: Timer!
+    var totalTime: Int = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         myFirstPosition = meImageView.frame.origin
         
+        totalTime = 0
+        
         //0.01秒ごとにselectorを発動する
-        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveBlock), userInfo: nil, repeats: true)
+        blockTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(moveBlock), userInfo: nil, repeats: true)
         
         //加速度の設定
         if motionManager.isAccelerometerAvailable {
@@ -86,9 +95,24 @@ class MazeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        mainTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(mesureSec), userInfo: nil, repeats: true)
+    }
+    @objc func mesureSec() {
+        totalTime += 1
+    }
+    
     func judgeAlert() {
-        let alert: UIAlertController = UIAlertController(title: "クリア", message: "ボタンを押して結果を見る", preferredStyle: .alert)
+        let alert: UIAlertController = UIAlertController(title: "クリア", message: "この種目のスコア： \(String(describing: self.totalTime))秒", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "結果を見る", style: .default, handler: {action in
+            //タイマーを止める
+            if self.blockTimer.isValid {
+                self.blockTimer.invalidate()
+            }
+            //タイマーを止める
+            if self.mainTimer.isValid {
+                self.mainTimer.invalidate()
+            }
             self.performSegue(withIdentifier: "toResult", sender: nil)
         }))
         present(alert, animated: true, completion: nil)
@@ -196,6 +220,7 @@ class MazeViewController: UIViewController {
         howToMoveBlock(sender: blockImage5)
         howToMoveBlock(sender: blockImage6)
     }
+    
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        //segue識別

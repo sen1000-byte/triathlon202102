@@ -21,6 +21,10 @@ class ColorViewController: UIViewController {
     var makingBlue: CGFloat!
     
     var whichColor: Int = 0
+    
+    //タイマー導入
+    var mainTimer: Timer!
+    var totalTime: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,40 +38,33 @@ class ColorViewController: UIViewController {
         makingGreen = 0
         whichColor = 0
         
+        totalTime = 0
         
         sampleImageView.backgroundColor = UIColor(red: CGFloat(red) / 255, green: CGFloat(green) / 255, blue: CGFloat(blue) / 255, alpha: 1.0)
         makingImageView.backgroundColor = UIColor(red: makingRed/255, green: makingGreen / 255, blue: makingBlue / 255, alpha: 1.0)
 
         // Do any additional setup after loading the view.
     }
-
-    /*
-    @IBAction func setRed() {
-        whichColor = 1
+    
+    override func viewDidAppear(_ animated: Bool) {
+        mainTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(mesureSec), userInfo: nil, repeats: true)
+    }
+    @objc func mesureSec() {
+        totalTime += 1
     }
     
-    @IBAction func setGreen() {
-        whichColor = 2
-    }
-    
-    @IBAction func setBlue() {
-        whichColor = 3
-    }
-    
-    @IBAction func cancel() {
-        whichColor = 0
-    }
-    */
- 
     //ジャッジする関数+=10は許す
     func  judge() {
         let gapRed:CGFloat! = abs(CGFloat(red) - makingRed)
         let gapGreen:CGFloat! = abs(CGFloat(green) - makingGreen)
         let gapBlue:CGFloat! = abs(CGFloat(blue) - makingBlue)
         
-        
         if gapRed <= 20 && gapGreen <= 20 && gapBlue <= 20 {
-            let alert: UIAlertController = UIAlertController(title: "クリア", message: "ボタンを押すと次の種目が始まります", preferredStyle: .alert)
+            //タイマーを止める
+            if mainTimer.isValid {
+                mainTimer.invalidate()
+            }
+            let alert: UIAlertController = UIAlertController(title: "クリア", message: "この種目のスコア： \(String(describing: self.totalTime))秒", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "次へ進む", style: .default, handler: {action in
                 self.performSegue(withIdentifier: "toMaze", sender: nil)
             } ))

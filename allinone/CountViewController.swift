@@ -13,6 +13,10 @@ class CountViewController: UIViewController {
     var countMain, count1, count2, count3, count4, count5: Int!
     
     var pushnumber: [Int] = [1,5,10, 15, 4]
+    
+    //タイマー導入
+    var mainTimer: Timer!
+    var totalTime: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +29,21 @@ class CountViewController: UIViewController {
         pushnumber.shuffle()
         label.text = String(countMain)
         
+        totalTime = 0
+        
         //ナビゲーションコントローラーの非表示設定
         self.navigationController?.navigationBar.isHidden = true
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        mainTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(mesureSec), userInfo: nil, repeats: true)
+    }
+    
+    @objc func mesureSec() {
+        totalTime += 1
+        
     }
     
     //煩雑、もう少し簡単にしたい
@@ -82,7 +97,11 @@ class CountViewController: UIViewController {
         
         //35までカウント出来たら次のページへ移る
         if countMain == 35 {
-            let alert: UIAlertController = UIAlertController(title: "クリア", message: "ボタンを押すと次の種目が始まります", preferredStyle: .alert)
+            //タイマーを止める
+            if mainTimer.isValid {
+                mainTimer.invalidate()
+            }
+            let alert: UIAlertController = UIAlertController(title: "クリア", message: "この種目のスコア： \(String(describing: self.totalTime))秒", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "次に進む", style: .default, handler: { action in
                 self.performSegue(withIdentifier: "toColor", sender: nil)
                 
