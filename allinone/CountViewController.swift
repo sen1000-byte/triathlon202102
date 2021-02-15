@@ -17,6 +17,10 @@ class CountViewController: UIViewController {
     //タイマー導入
     var mainTimer: Timer!
     var totalTime: Int = 0
+    
+    //userdefaultを使う
+    var saveData: UserDefaults = UserDefaults.standard
+    var scoreArray: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +34,12 @@ class CountViewController: UIViewController {
         label.text = String(countMain)
         
         totalTime = 0
+//        scoreArray = saveData.object(forKey: "Time") as! [Int?]
         
         //ナビゲーションコントローラーの非表示設定
         self.navigationController?.navigationBar.isHidden = true
+        
+        print(scoreArray)
 
         // Do any additional setup after loading the view.
     }
@@ -101,14 +108,17 @@ class CountViewController: UIViewController {
             if mainTimer.isValid {
                 mainTimer.invalidate()
             }
+            scoreArray.append(totalTime)
             let alert: UIAlertController = UIAlertController(title: "クリア", message: "この種目のスコア： \(String(describing: self.totalTime))秒", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "次に進む", style: .default, handler: { action in
-                self.performSegue(withIdentifier: "toColor", sender: nil)
-                
-                /*Segueを使わない時　ただし、storyboard内で繋いでる時は画面遷移がダブるためエラーになる
-                let colorViewController = self.storyboard?.instantiateViewController(identifier: "Color") as! UINavigationController
+//                self.performSegue(withIdentifier: "toColor", sender: nil)
+//                self.scoreArray[0] = self.totalTime
+//                self.saveData.setValue(self.scoreArray, forKey: "Time")
+                //Segueを使わない時　ただし、storyboard内で繋いでる時は画面遷移がダブるためエラーになる
+                let colorViewController = self.storyboard?.instantiateViewController(identifier: "Color") as! ColorViewController
+                colorViewController.scoreArray = self.scoreArray
                 self.navigationController?.pushViewController(colorViewController, animated: true)
-                 */
+                 
             }))
             present(alert, animated: true, completion: nil)
         }

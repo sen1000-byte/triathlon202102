@@ -25,6 +25,9 @@ class ColorViewController: UIViewController {
     //タイマー導入
     var mainTimer: Timer!
     var totalTime: Int = 0
+    
+    //値引継ぎ
+    var scoreArray: [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +67,7 @@ class ColorViewController: UIViewController {
             if mainTimer.isValid {
                 mainTimer.invalidate()
             }
+            scoreArray.append(totalTime)
             let alert: UIAlertController = UIAlertController(title: "クリア", message: "この種目のスコア： \(String(describing: self.totalTime))秒", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "次へ進む", style: .default, handler: {action in
                 self.performSegue(withIdentifier: "toMaze", sender: nil)
@@ -124,15 +128,16 @@ class ColorViewController: UIViewController {
         judge()
     }
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        //segue識別
-//        if segue.identifier == "toMaze" {
-//            //遷移先のViewControllerを取得
-//            let nextView = segue.destination as! MazeViewController
-//            //画面をフルスクリーンにする
-//            nextView.modalPresentationStyle = .fullScreen
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //segue識別
+        if segue.identifier == "toMaze" {
+            //遷移先のViewControllerを取得
+            let nextView = segue.destination as! MazeViewController
+            nextView.scoreArray = scoreArray
+            //画面をフルスクリーンにする
+            //nextView.modalPresentationStyle = .fullScreen
+        }
+    }
     
 
     /*

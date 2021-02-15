@@ -45,6 +45,8 @@ class MazeViewController: UIViewController {
     var mainTimer: Timer!
     var totalTime: Int = 0
     
+    //値引継ぎ
+    var scoreArray: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,6 +115,7 @@ class MazeViewController: UIViewController {
             if self.mainTimer.isValid {
                 self.mainTimer.invalidate()
             }
+            self.scoreArray.append(self.totalTime)
             self.performSegue(withIdentifier: "toResult", sender: nil)
         }))
         present(alert, animated: true, completion: nil)
@@ -222,15 +225,16 @@ class MazeViewController: UIViewController {
     }
     
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        //segue識別
-//        if segue.identifier == "toResult" {
-//            //遷移先のViewControllerを取得
-//            let nextView = segue.destination as! ResultViewController
-//            //画面をフルスクリーンにする
-//            nextView.modalPresentationStyle = .fullScreen
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //segue識別
+        if segue.identifier == "toResult" {
+            //遷移先のViewControllerを取得
+            let nextView = segue.destination as! ResultViewController
+            nextView.scoreArray = scoreArray
+            //画面をフルスクリーンにする
+           // nextView.modalPresentationStyle = .fullScreen
+        }
+    }
     
     /*
     // MARK: - Navigation
