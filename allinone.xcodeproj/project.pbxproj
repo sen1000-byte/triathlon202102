@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3314EB3425DA049C0040192D /* SaveFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3314EB3325DA049C0040192D /* SaveFormat.swift */; };
+		335EB27125DE25BD004818C9 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335EB27025DE25BD004818C9 /* RankingTableViewCell.swift */; };
 		339A07EB25D738C500D0F6E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A07EA25D738C500D0F6E7 /* AppDelegate.swift */; };
 		339A07ED25D738C500D0F6E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A07EC25D738C500D0F6E7 /* SceneDelegate.swift */; };
 		339A07EF25D738C500D0F6E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339A07EE25D738C500D0F6E7 /* ViewController.swift */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		0B27ABF1C3FF65B64F636BE2 /* Pods-allinone-allinoneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allinone-allinoneUITests.release.xcconfig"; path = "Target Support Files/Pods-allinone-allinoneUITests/Pods-allinone-allinoneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		26C9C37DEA122C6B6955B7E9 /* Pods-allinone-allinoneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-allinone-allinoneUITests.debug.xcconfig"; path = "Target Support Files/Pods-allinone-allinoneUITests/Pods-allinone-allinoneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3314EB3325DA049C0040192D /* SaveFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFormat.swift; sourceTree = "<group>"; };
+		335EB27025DE25BD004818C9 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
 		339A07E725D738C500D0F6E7 /* allinone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = allinone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339A07EA25D738C500D0F6E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		339A07EC25D738C500D0F6E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 				339A083D25D74D5E00D0F6E7 /* ResultViewController.swift */,
 				339A084225D74D8E00D0F6E7 /* RankingViewController.swift */,
 				339A084725D771D900D0F6E7 /* Designable.swift */,
+				3314EB3325DA049C0040192D /* SaveFormat.swift */,
+				335EB27025DE25BD004818C9 /* RankingTableViewCell.swift */,
 			);
 			path = allinone;
 			sourceTree = "<group>";
@@ -431,7 +437,9 @@
 				339A083425D74D0800D0F6E7 /* ColorViewController.swift in Sources */,
 				339A07ED25D738C500D0F6E7 /* SceneDelegate.swift in Sources */,
 				339A083925D74D3A00D0F6E7 /* MazeViewController.swift in Sources */,
+				3314EB3425DA049C0040192D /* SaveFormat.swift in Sources */,
 				339A084325D74D8E00D0F6E7 /* RankingViewController.swift in Sources */,
+				335EB27125DE25BD004818C9 /* RankingTableViewCell.swift in Sources */,
 				339A084825D771D900D0F6E7 /* Designable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import RealmSwift
 
-class RankingViewController: UITableViewController {
+class RankingViewController: UITableViewController{
+    
+    //realmから値を全て取り出し
+    var saveData = try! Realm().objects(saveFormat.self)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +33,27 @@ class RankingViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return saveData.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RankingTableViewCell
 
         // Configure the cell...
-
+        //並び替え
+        saveData = saveData.sorted(byKeyPath: "score", ascending: true)
+        cell.nameLabel.text = saveData[indexPath.row].name
+        cell.scoreLabel.text = String(saveData[indexPath.row].score) + "秒"
+        cell.iconImage.image = UIImage(named: saveData[indexPath.row].iconImage)
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

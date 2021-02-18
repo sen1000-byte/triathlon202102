@@ -59,7 +59,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="F2b-ha-Cx5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="F2b-ha-Cx5" customClass="RankingTableViewCell" customModule="allinone" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="60.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F2b-ha-Cx5" id="Mfu-95-2nE">
@@ -100,6 +100,11 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="jmg-Wm-j9B" secondAttribute="trailing" constant="20" id="zgs-yd-JV7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconImage" destination="uDe-2D-isv" id="S6I-3J-7GI"/>
+                                    <outlet property="nameLabel" destination="OJa-bF-rxs" id="0HD-N6-NLb"/>
+                                    <outlet property="scoreLabel" destination="jmg-Wm-j9B" id="IvB-hb-qYG"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -567,6 +572,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="vTH-t0-wp2"/>
                     <connections>
+                        <outlet property="iconImageView" destination="AJ9-8U-Lz5" id="Bjm-LX-sJZ"/>
+                        <outlet property="nameTextView" destination="XGg-3v-w46" id="Qe0-el-7t5"/>
                         <outlet property="resultLabel" destination="cc3-4I-F4J" id="6in-CS-gao"/>
                     </connections>
                 </viewController>
